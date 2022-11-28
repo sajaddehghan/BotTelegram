@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://www.springframework.org/schema/security"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd      
+	http://www.springframework.org/schema/security    
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+    <http auto-config="true">
+
+    <form-login always-use-default-target="true"
+
+                default-target-url="/pages/tile/tile-shop/product-view.xhtml" />
+
+    <!-- <remember-me key="SecretariatRMKey" user-service-ref="userDetailsService"/> -->
+    <custom-filter ref="rememberMeFilter" position="REMEMBER_ME_FILTER"/>
+    <session-management session-fixation-protection="migrateSession">
+        <concurrency-control max-sessions="1"
+                />
+    </session-management>
+</http>
+    <authentication-manager alias="authenticationManager"
+                            xmlns="http://www.springframework.org/schema/security">
+
+        <authentication-provider user-service-ref="userDetailsService">
+            <password-encoder hash="plaintext"/>
+        </authentication-provider>
+        <authentication-provider ref="rememberMeAuthenticationProvider"/>
+    </authentication-manager>
+    <beans:bean
+            class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl"
+            id="userDetailsService">
+        <beans:property name="rolePrefix" value="ROLE_"/>
+        <beans:property name="dataSource" ref="org_postgresql_DriverDS"/>
+        <beans:property name="usersByUsernameQuery"
+                        value="SELECT username,password,enabled FROM Users WHERE username = ? "/>
+        <beans:property name="authoritiesByUsernameQuery"
+                        value="SELECT u.username, a.authorityname FROM Users u JOIN Users_Authorities ua on u.id = ua.user_id JOIN Authorities a on ua.authorities_id = a.id WHERE u.username = ?"/>
+    </beans:bean>
+    <!-- Remember-me configuration -->
+    <beans:bean id="rememberMeFilter"
+                class="org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter">
+        <beans:property name="authenticationManager" ref="authenticationManager"/>
+        <beans:property name="rememberMeServices" ref="rememberMeServices"/>
+    </beans:bean>
+
+    <beans:bean id="rememberMeServices"
+                class="org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices">
+        <beans:property name="userDetailsService" ref="userDetailsService"/>
+        <beans:property name="key" value="springRocks"/>
+    </beans:bean>
+
+    <beans:bean id="rememberMeAuthenticationProvider"
+                class="org.springframework.security.authentication.RememberMeAuthenticationProvider">
+        <beans:property name="key" value="springRocks"/>
+    </beans:bean>
+
+    <global-method-security>
+
+    </global-method-security>
+</beans:beans>

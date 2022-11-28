@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: alfresco:alfresco-repository:4.0.d-C">
+    <CLASSES>
+      <root url="jar://F:/.m2/repository/alfresco/alfresco-repository/4.0.d-C/alfresco-repository-4.0.d-C.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://F:/.m2/repository/alfresco/alfresco-repository/4.0.d-C/alfresco-repository-4.0.d-C-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://F:/.m2/repository/alfresco/alfresco-repository/4.0.d-C/alfresco-repository-4.0.d-C-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

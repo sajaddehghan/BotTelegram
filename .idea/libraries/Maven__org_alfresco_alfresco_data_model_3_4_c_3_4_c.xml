@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.alfresco:alfresco-data-model-3.4.c:3.4.c">
+    <CLASSES>
+      <root url="jar://F:/.m2/repository/org/alfresco/alfresco-data-model-3.4.c/3.4.c/alfresco-data-model-3.4.c-3.4.c.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://F:/.m2/repository/org/alfresco/alfresco-data-model-3.4.c/3.4.c/alfresco-data-model-3.4.c-3.4.c-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://F:/.m2/repository/org/alfresco/alfresco-data-model-3.4.c/3.4.c/alfresco-data-model-3.4.c-3.4.c-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

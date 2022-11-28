@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.rivetlogic:cma-impl:4.0.d-C-0">
+    <CLASSES>
+      <root url="jar://F:/.m2/repository/com/rivetlogic/cma-impl/4.0.d-C-0/cma-impl-4.0.d-C-0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://F:/.m2/repository/com/rivetlogic/cma-impl/4.0.d-C-0/cma-impl-4.0.d-C-0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://F:/.m2/repository/com/rivetlogic/cma-impl/4.0.d-C-0/cma-impl-4.0.d-C-0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
